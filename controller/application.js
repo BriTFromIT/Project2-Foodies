@@ -1,7 +1,4 @@
 const appControl = {
-    // index: (req, res) => {
-    //     res.render('index')
-    // },
     foodies: (req, res) => {
         res.render('index')
     }
