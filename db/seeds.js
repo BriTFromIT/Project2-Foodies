@@ -1,6 +1,6 @@
 let User = require('../models/User')
 let Restaurant = require('../models/Restaurant')
-// let Review = require('../models/Reviews')
+let Review = require('../models/Reviews')
 
 
 let newUser = {
@@ -8,7 +8,18 @@ let newUser = {
     // password: 'AllBlackEverything3',
     yourlocation: 'Washington, DC',
     img: 'https://www.linkedin.com/in/brittfromit/',
-    explorations: [{
+    
+}
+
+User.create(newUser).then(users => {
+        console.log('Saved Users', users)
+    })
+
+let newRestaurant = {
+    name: 'Foodies',
+    slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
+    img: '',
+    explorations:  [{
         name: 'Smith Public Trust',
         location: '3514 12th St. NE DC 20017',
         contact: 202733583,
@@ -59,25 +70,11 @@ let newUser = {
         }],
         website: 'https://poboyjim.com/',
         description: 'Po Boy Jim is a family-owned restaurant that specializes Po’ Boys that are traditional and/or uniquely crafted. We aim to provide our patrons with high quality food and beverages in a casual, rustic environment, so that food, drinks, and customer service are the highlight of the experience.',
-        img: 'http://i221.photobucket.com/albums/dd225/scaridad/IMG_0192.jpg',
-        img: 'https://www.dinersdriveinsdiveslocations.com/oohhs-aahhs-grilled-whiting.jpg',
+        img: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwju-fuYlaXeAhXKTd8KHVz8BssQjRx6BAgBEAU&url=https%3A%2F%2Ffaroutawardsblog.com%2F2015%2F01%2F07%2Fpo-boy-eating-contest%2F&psig=AOvVaw1eXSIjQ1_bJXYrUA_C4_oF&ust=1540679526994400',
+        img: 'https://poboyjim.com/gallery/#!jig[1]/https://scontent.cdninstagram.com/vp/d18270774769f0415ffb00753c05cf0a/5C4D1B84/t51.2885-15/sh0.08/e35/s640x640/42582798_1912861875416782_1478755084091718507_n.jpg',
     }
     ]
 }
-
-User.create(newUser).then(users => {
-        console.log('Saved Users', users)
-    })
-
-let newRestaurant =
-{
-    name: 'Foodies',
-    slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
-    img: '',
-    explorations: 
-}
-
-
 Restaurant.create(newRestaurant).then(restaurants => {
     console.log('Saved Restaurants', restaurants)
 })
@@ -85,10 +82,26 @@ Restaurant.create(newRestaurant).then(restaurants => {
 
 
 
-// let newReview = {
-//     name: String,
-//     img: String,
-//     price: String,
-//     review: String,
-//     rating: String,
-// }
+let smithPublicTrustDc = new Reviews ({
+    name: String,
+    img: String,
+    price: String,
+    review: String,
+    rating: String,
+})
+
+let ohsAndAhs = new Reviews ({
+    name: String,
+    img: String,
+    price: String,
+    review: String,
+    rating: String,
+})
+
+let poBoyJims = new Reviews ({
+    name: String,
+    img: String,
+    price: String,
+    review: String,
+    rating: String,
+})
