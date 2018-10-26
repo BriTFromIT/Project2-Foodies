@@ -1,6 +1,6 @@
 let User = require('../models/User')
 let Restaurant = require('../models/Restaurant')
-let Review = require('../models/Reviews')
+let Reviews = require('../models/Reviews')
 
 
 let newUser = {
@@ -84,10 +84,10 @@ Restaurant.create(newRestaurant).then(restaurants => {
 
 let smithPublicTrustDc = new Reviews ({
     name: String,
-    img: String,
-    price: String,
-    review: String,
-    rating: String,
+    img: 'http://img.food.com/img/recipes/47/47/92/large/picJ3R9Br.jpg',
+    price: 12,
+    review: 'https://www.yelp.com/biz/smith-public-trust-washington',
+    rating: '  ',
 })
 
 let ohsAndAhs = new Reviews ({
