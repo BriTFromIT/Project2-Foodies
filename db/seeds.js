@@ -37,7 +37,7 @@ let poBoyJims = new Reviews ({
 // RESTAURANTS SECTION ---------------------------------------------
 
 //************************newRestaurant1*************************************************
-let newRestaurant1 = new Restaurants ({
+let newRestaurant1 = new Restaurant ({
     explorations:  {
         name: 'Smith Public Trust',
         location: '3514 12th St. NE DC 20017',
@@ -64,7 +64,7 @@ let newRestaurant1 = new Restaurants ({
 
 //************************newRestaurant2*************************************************
 
-let newRestaurant2 = new Restaurants ({
+let newRestaurant2 = new Restaurant ({
     explorations:  {
         name: 'Ohhhs & Aahhs Soul Food',
         location: '1005 U St NW, Washington, DC 20001',
@@ -91,7 +91,7 @@ let newRestaurant2 = new Restaurants ({
 
 //************************newRestaurant3*************************************************
 
-let newRestaurant3 = new Restaurants ({
+let newRestaurant3 = new Restaurant ({
     explorations:  {
         name: 'PoBoyJims',
         location: '1934 9th St. NW Washington, DC 20001',
@@ -120,7 +120,7 @@ let newRestaurant3 = new Restaurants ({
 
 //  USERS SECTION ---------------------------------------------
 
-let newUser = new Users ({
+let newUser = new User ({
     name: 'Foodies',
     username: 'brittanylewis32@gmail.com',
     password: 'QueenOfBackendFirstOfHerName3',
@@ -142,4 +142,4 @@ User.remove({})
 .then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
 .then(() => newUser.save())
 .then(() => console.log("Database seeded successfully"))
-.then(() => mongoose.connection.close())
+.then(() => mongoose.connection.close()))
