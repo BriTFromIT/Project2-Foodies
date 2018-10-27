@@ -1,31 +1,35 @@
-let Reviews = require('../models/Reviews')
-let Restaurant = require('../models/Restaurant')
-let User = require('../models/User')
+const User = require('../models/User')
+const Restaurant = require('../models/Restaurant')
+const Reviews = require('../models/Reviews')
+
+const mongoose = require('./connection')
+
+
 
 // REVIEW SECTION ---------------------------------------------
 
 let smithPublicTrustDc = new Reviews ({
-    name: String,
+    name: 'California Shrimp Tacos',
     img: 'http://img.food.com/img/recipes/47/47/92/large/picJ3R9Br.jpg',
-    price: 12,
-    review: 'https://www.yelp.com/biz/smith-public-trust-washington',
-    rating: '  ',
+    price: '$ 12',
+    yelpreview: 'https://www.yelp.com/biz/smith-public-trust-washington',
+    myrating: ' 4 Stars - The wall art screams, BLACK! - The food screams, EAT ME! ' 
 })
 
 let ohsAndAhs = new Reviews ({
-    name: String,
-    img: String,
-    price: String,
-    review: String,
-    rating: String,
+    name: 'Short Ribs',
+    img: 'https://lh5.googleusercontent.com/-ZeBVXKK0rCE/T5MWOcds3nI/AAAAAAAAAB0/pCB0JEjC550/s640/blogger-image-1904455069.jpg',
+    price: '$18.95',
+    yelpreview: 'https://www.yelp.com/biz/oohhs-and-aahhs-washington',
+    myrating: ' 2.5 Stars - I think my food tastes better '
 })
 
 let poBoyJims = new Reviews ({
-    name: String,
-    img: String,
+    name: 'PoBoyJims',
+    img: 'https://files.slack.com/files-pri/T0351JZQ0-FDM8A87PT/image.png',
     price: String,
-    review: String,
-    rating: String,
+    yelpreview: String,
+    myrating: String
 })
 
 // ---------------------------------------------------------------
@@ -54,9 +58,9 @@ let newRestaurant1 = new Restaurants ({
     }
 })
 
-Restaurant.create(newRestaurant1).then(restaurants => {
-    console.log('Saved Restaurants', restaurants)
-})
+// Restaurant.create(newRestaurant1).then(restaurants => {
+//     console.log('Saved Restaurants', restaurants)
+// })
 
 //************************newRestaurant2*************************************************
 
@@ -79,9 +83,9 @@ let newRestaurant2 = new Restaurants ({
         img: 'https://www.dinersdriveinsdiveslocations.com/oohhs-aahhs-grilled-whiting.jpg'
 })
 
-Restaurant.create(newRestaurant2).then(restaurants => {
-    console.log('Saved Restaurants', restaurants)
-})
+// Restaurant.create(newRestaurant2).then(restaurants => {
+//     console.log('Saved Restaurants', restaurants)
+// })
 
 //************************newRestaurant3*************************************************
 
@@ -104,38 +108,33 @@ let newRestaurant3 = new Restaurants ({
         img: 'https://poboyjim.com/gallery/#!jig[1]/https://scontent.cdninstagram.com/vp/d18270774769f0415ffb00753c05cf0a/5C4D1B84/t51.2885-15/sh0.08/e35/s640x640/42582798_1912861875416782_1478755084091718507_n.jpg'
 })
 
-Restaurant.create(newRestaurant3).then(restaurants => {
-    console.log('Saved Restaurants', restaurants)
-})
+// Restaurant.create(newRestaurant3).then(restaurants => {
+//     console.log('Saved Restaurants', restaurants)
+// })
 // ---------------------------------------------------------------
 
 
 //  USERS SECTION ---------------------------------------------
-let newUser = {
+let newUser = ({
     name: 'Foodies',
     // username: 'brittanylewis32@gmail.com',
     // password: 'AllBlackEverything3',
     yourlocation: 'Washington, DC',
     img: 'https://www.linkedin.com/in/brittfromit/',
     slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
-}
+})
 
-User.create(newUser).then(users => {
-        console.log('Saved Users', users)
-    })
+// User.create(newUser).then(users => {
+//         console.log('Saved Users', users)
+//     })
 
 
 // ---------------------------------------------------------------
 
 
-
-// THIS SECTION IS TO RENDER THE RESULTS
-
-
-// User.removeMany({})
-    // .then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
-    // .then(() => kroger.save())
-    // .then(() => target.save())
-    // .then(() => walmart.save())
-    // .then(() => console.log("Database seeded success"))
-    // .then(() => mongoose.connection.close()) //automatically closes mongoose
+User.remove({})
+.then(() => Restaurant.insertMany([ newRestaurant1, newRestaurant2, newRestaurant3])
+.then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
+.then(() => newUser.save())
+.then(() => console.log("Database seeded successfully"))
+.then(() => mongoose.connection.close()) 

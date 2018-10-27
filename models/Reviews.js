@@ -8,8 +8,8 @@ const Reviews = new Schema ({
     name: String,
     img: String,
     price: String,
-    review: String,
-    rating: String,
+    yelpreview: String,
+    myrating: String,
 
 })
 
