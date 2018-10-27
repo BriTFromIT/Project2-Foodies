@@ -1,21 +1,38 @@
-let User = require('../models/User')
-let Restaurant = require('../models/Restaurant')
 let Reviews = require('../models/Reviews')
+let Restaurant = require('../models/Restaurant')
+let User = require('../models/User')
 
+// REVIEW SECTION ---------------------------------------------
 
-let newUser = {
-    name: 'Foodies',
-    // username: 'brittanylewis32@gmail.com',
-    // password: 'AllBlackEverything3',
-    yourlocation: 'Washington, DC',
-    img: 'https://www.linkedin.com/in/brittfromit/',
-    slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
-}
+let smithPublicTrustDc = new Reviews ({
+    name: String,
+    img: 'http://img.food.com/img/recipes/47/47/92/large/picJ3R9Br.jpg',
+    price: 12,
+    review: 'https://www.yelp.com/biz/smith-public-trust-washington',
+    rating: '  ',
+})
 
-User.create(newUser).then(users => {
-        console.log('Saved Users', users)
-    })
+let ohsAndAhs = new Reviews ({
+    name: String,
+    img: String,
+    price: String,
+    review: String,
+    rating: String,
+})
 
+let poBoyJims = new Reviews ({
+    name: String,
+    img: String,
+    price: String,
+    review: String,
+    rating: String,
+})
+
+// ---------------------------------------------------------------
+
+// RESTAURANTS SECTION ---------------------------------------------
+
+//************************newRestaurant1*************************************************
 let newRestaurant1 = new Restaurants ({
     explorations:  {
         name: 'Smith Public Trust',
@@ -41,6 +58,8 @@ Restaurant.create(newRestaurant1).then(restaurants => {
     console.log('Saved Restaurants', restaurants)
 })
 
+//************************newRestaurant2*************************************************
+
 let newRestaurant2 = new Restaurants ({
         name: 'Ohhhs & Aahhs Soul Food',
         location: '1005 U St NW, Washington, DC 20001',
@@ -64,6 +83,8 @@ Restaurant.create(newRestaurant2).then(restaurants => {
     console.log('Saved Restaurants', restaurants)
 })
 
+//************************newRestaurant3*************************************************
+
 let newRestaurant3 = new Restaurants ({
         name: 'PoBoyJims',
         location: '1934 9th St. NW Washington, DC 20001',
@@ -86,35 +107,30 @@ let newRestaurant3 = new Restaurants ({
 Restaurant.create(newRestaurant3).then(restaurants => {
     console.log('Saved Restaurants', restaurants)
 })
+// ---------------------------------------------------------------
+
+
+//  USERS SECTION ---------------------------------------------
+let newUser = {
+    name: 'Foodies',
+    // username: 'brittanylewis32@gmail.com',
+    // password: 'AllBlackEverything3',
+    yourlocation: 'Washington, DC',
+    img: 'https://www.linkedin.com/in/brittfromit/',
+    slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
+}
+
+User.create(newUser).then(users => {
+        console.log('Saved Users', users)
+    })
+
+
+// ---------------------------------------------------------------
 
 
 
+// THIS SECTION IS TO RENDER THE RESULTS
 
-
-
-let smithPublicTrustDc = new Reviews ({
-    name: String,
-    img: 'http://img.food.com/img/recipes/47/47/92/large/picJ3R9Br.jpg',
-    price: 12,
-    review: 'https://www.yelp.com/biz/smith-public-trust-washington',
-    rating: '  ',
-})
-
-let ohsAndAhs = new Reviews ({
-    name: String,
-    img: String,
-    price: String,
-    review: String,
-    rating: String,
-})
-
-let poBoyJims = new Reviews ({
-    name: String,
-    img: String,
-    price: String,
-    review: String,
-    rating: String,
-})
 
 // User.removeMany({})
     // .then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
