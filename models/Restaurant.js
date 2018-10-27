@@ -1,10 +1,8 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
-const Restaurants = new Schema ({
-    name: String,
-    img: String,
-    explorations:  {
+const Restaurants = new Schema({
+    explorations: {
         name: String,
         location: String,
         contact: Number,
