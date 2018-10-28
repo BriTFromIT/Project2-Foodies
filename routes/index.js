@@ -23,7 +23,7 @@ router.get('/users', foodie.index) //GET user's profile page || shows User Profi
 // Create routes for navigating User profile:
 // router.get('/users/new', foodie.new) //GET - navigates to new user page 
 router.get('/users/:id', foodie.show) // GET - shows new user page
-// router.post('/users/:id/edit', foodie.edit) // GET -  Rendering the form to update user profile
+router.post('/users/:id/edit', foodie.edit) // GET -  Rendering the form to update user profile
 router.patch('/users/:id', foodie.update) // PATCH - update user profile
 
 // -----_-_-____-___-_-_-----_-_____---______------_
