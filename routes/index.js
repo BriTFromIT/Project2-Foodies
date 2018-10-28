@@ -1,15 +1,16 @@
-// DATABASE CONTROLLERS : 
+// DATABASE CONNECTIONS : 
 
 var express = require('express');
 var router = express.Router();
 
+// CONTROLLER CONNECTIONS: 
 const appControl = require('../controller/application')
 const foodie = require('../controller/foodie') // foodie.js || Users profile page
 const explore = require('../controller/explorations') // explorations.js || explorations / restaurants
 const eval = require('../controller/eval') // eval.js || Reviews 
 
 
-// main user controller:
+// Create route index for Application.js controller:
 router.get('/', appControl.foodies) // GET home page 
 
 // -----_-_-____-___-_-_-----_-_____---______------_
@@ -20,9 +21,9 @@ router.get('/', appControl.foodies) // GET home page
 router.get('/users', foodie.index) //GET user's profile page || shows User Profile
 
 // Create routes for navigating User profile:
-router.get('/users/new', foodie.new) //GET - navigates to new user page 
+// router.get('/users/new', foodie.new) //GET - navigates to new user page 
 router.get('/users/:id', foodie.show) // GET - shows new user page
-router.post('/users', foodie.create) // POST - creating the user profile
+// router.post('/users/:id/edit', foodie.edit) // GET -  Rendering the form to update user profile
 router.patch('/users/:id', foodie.update) // PATCH - update user profile
 
 // -----_-_-____-___-_-_-----_-_____---______------_
