@@ -8,15 +8,15 @@ const mongoose = require('./connection')
 
 // REVIEW SECTION ---------------------------------------------
 
-let smithPublicTrustDc = new Reviews ({
+let smithPublicTrustDc = new Reviews({
     name: 'California Shrimp Tacos',
     img: 'http://img.food.com/img/recipes/47/47/92/large/picJ3R9Br.jpg',
     price: '$ 12.00 ',
     yelpreview: 'https://www.yelp.com/biz/smith-public-trust-washington',
-    myrating: ' 4 Stars - The wall art screams, BLACK! - The food screams, EAT ME! ' 
+    myrating: ' 4 Stars - The wall art screams, BLACK! - The food screams, EAT ME! '
 })
 
-let ohsAndAhs = new Reviews ({
+let ohsAndAhs = new Reviews({
     name: 'Short Ribs',
     img: 'https://lh5.googleusercontent.com/-ZeBVXKK0rCE/T5MWOcds3nI/AAAAAAAAAB0/pCB0JEjC550/s640/blogger-image-1904455069.jpg',
     price: '$ 18.95',
@@ -24,7 +24,7 @@ let ohsAndAhs = new Reviews ({
     myrating: ' 2.5 Stars - One of the DCs most popular restaurants for tourists but as a local - I think my cooking tastes better '
 })
 
-let poBoyJims = new Reviews ({
+let poBoyJims = new Reviews({
     name: 'PoBoyJims',
     img: 'https://files.slack.com/files-pri/T0351JZQ0-FDM8A87PT/image.png',
     price: '$ 9.00',
@@ -37,8 +37,8 @@ let poBoyJims = new Reviews ({
 // RESTAURANTS SECTION ---------------------------------------------
 
 //************************newRestaurant1*************************************************
-let newRestaurant1 = new Restaurant ({
-    explorations:  {
+let newRestaurant1 = new Restaurant({
+    explorations: {
         name: 'Smith Public Trust',
         location: '3514 12th St. NE DC 20017',
         contact: 202733583,
@@ -64,8 +64,8 @@ let newRestaurant1 = new Restaurant ({
 
 //************************newRestaurant2*************************************************
 
-let newRestaurant2 = new Restaurant ({
-    explorations:  {
+let newRestaurant2 = new Restaurant({
+    explorations: {
         name: 'Ohhhs & Aahhs Soul Food',
         location: '1005 U St NW, Washington, DC 20001',
         contact: 2026677142,
@@ -82,7 +82,7 @@ let newRestaurant2 = new Restaurant ({
         description: 'The regions best soul food, dished out from a galley kitchen to customers who josh with chef Oji Abbott as they tear into heaped-high meals. The mac and cheese inspires devotion, fried chicken is the stuff of dreams, and candied yams conjure a homey Thanksgiving dinner.',
         img: 'http://i221.photobucket.com/albums/dd225/scaridad/IMG_0192.jpg',
         img: 'https://www.dinersdriveinsdiveslocations.com/oohhs-aahhs-grilled-whiting.jpg'
-}
+    }
 })
 
 // Restaurant.create(newRestaurant2).then(restaurants => {
@@ -91,8 +91,8 @@ let newRestaurant2 = new Restaurant ({
 
 //************************newRestaurant3*************************************************
 
-let newRestaurant3 = new Restaurant ({
-    explorations:  {
+let newRestaurant3 = new Restaurant({
+    explorations: {
         name: 'PoBoyJims',
         location: '1934 9th St. NW Washington, DC 20001',
         contact: 2026272687,
@@ -109,7 +109,7 @@ let newRestaurant3 = new Restaurant ({
         description: 'Po Boy Jim is a family-owned restaurant that specializes Po’ Boys that are traditional and/or uniquely crafted. We aim to provide our patrons with high quality food and beverages in a casual, rustic environment, so that food, drinks, and customer service are the highlight of the experience.',
         img: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwju-fuYlaXeAhXKTd8KHVz8BssQjRx6BAgBEAU&url=https%3A%2F%2Ffaroutawardsblog.com%2F2015%2F01%2F07%2Fpo-boy-eating-contest%2F&psig=AOvVaw1eXSIjQ1_bJXYrUA_C4_oF&ust=1540679526994400',
         img: 'https://poboyjim.com/gallery/#!jig[1]/https://scontent.cdninstagram.com/vp/d18270774769f0415ffb00753c05cf0a/5C4D1B84/t51.2885-15/sh0.08/e35/s640x640/42582798_1912861875416782_1478755084091718507_n.jpg'
-}
+    }
 })
 
 // Restaurant.create(newRestaurant3).then(restaurants => {
@@ -121,12 +121,14 @@ let newRestaurant3 = new Restaurant ({
 //  USERS SECTION ---------------------------------------------
 
 let newUser = new User ({
-    name: 'Foodies',
-    username: 'brittanylewis32@gmail.com',
-    password: 'QueenOfBackendFirstOfHerName3',
-    yourlocation: 'Washington, DC',
-    img: 'https://www.linkedin.com/in/brittfromit/',
-    slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
+    info: [{
+        name: 'Backend Queen',
+        username: 'BackEndQueen',
+        password: 'QueenOfBackendFirstOfHerName3',
+        yourlocation: 'Washington, DC',
+        img: 'https://www.linkedin.com/in/brittfromit/'
+        // slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
+    }]
 })
 
 // User.create(newUser).then(users => {
@@ -138,8 +140,8 @@ let newUser = new User ({
 
 
 User.remove({})
-.then(() => Restaurant.insertMany([ newRestaurant1, newRestaurant2, newRestaurant3])
-.then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
-.then(() => newUser.save())
-.then(() => console.log("Database seeded successfully"))
-.then(() => mongoose.connection.close()))
+    .then(() => Restaurant.insertMany([newRestaurant1, newRestaurant2, newRestaurant3])
+        .then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
+        .then(() => newUser.save())
+        .then(() => console.log("Database seeded successfully"))
+        .then(() => mongoose.connection.close()))
