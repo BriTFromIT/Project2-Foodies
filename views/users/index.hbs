@@ -1,2 +1,28 @@
-<h1> USER PROFILE  </h1>
-<p> FOODIE.JS FILE </p>
+<h1> ****THIS PAGE SHOWS THE USER'S PROFILE***  </h1>
+
+
+
+<h1>Welcome Back, {{User.name}} ! </h1>
+
+<br>
+
+<main>
+<h3> Your Explorations: </h3>
+<a href="/explorations/new"> <button> Create New Exploration </button></a>
+        </div>
+
+<br>
+{{user.email}}
+{{user.events}}
+   <form action="/users/{{user._id}}/edit" method="PATCH">
+
+      <button> Sign Up ! </button>
+</form>
+ <form action="/events/{{event._id}}/edit" method="PATCH">
+   <button> Sign In ! </button>
+</form>
+
+   <br>
+   <br>
+
+

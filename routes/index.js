@@ -22,7 +22,9 @@ router.get('/users', foodie.index) //GET user's page || shows User Profile
 
 // Create routes for navigating User profile:
 router.get('/users/new', foodie.new) //GET - navigates to new user page
-router.get('/users/:id', foodie.show) // GET - shows new user profile
+router.post('/users', foodie.create) // POST - function for creating the user profile
+router.post('/users', foodie.edit) // POST will show the create page for new user profile
+router.get('/users/:id', foodie.show) // GET - shows new user profile// router.post('/users/:id/edit', foodie.edit) // GET -  Rendering the form to update user profile
 
 // -----_-_-____-___-_-_-----_-_____---______------_
 // -----_-_-____-___-_-_-----_-_____---______------_
@@ -32,8 +34,9 @@ router.get('/users/:id', foodie.show) // GET - shows new user profile
 router.get('/explorations', explore.index) // GET user's explorations &&|| shows Restaurants
 
 
-// Create routes for navigating Explorations / Restaurants: 
-router.get('explorations/:id', explore.show) // GET - navigates to explorations page
+// Create routes for navigating Explorations / Restaurants:
+router.get('/explorations/new', explore.new)
+router.get('/explorations/:id', explore.show) // GET - navigates to explorations page
 // router.get('/explorations/:id', explore.show) // GET - gets the _id of each restaurant from exploreations.js .then 'findByID'
 // router.post('/explorations/:id', explore.update) // POST - update user's explorations / restaurants they visited
 // router.delete('/explorations/:id', explore.delete) // DELETE - removes selected exploration / restaurant information

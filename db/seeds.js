@@ -25,7 +25,7 @@ let ohsAndAhs = new Reviews({
 })
 
 let poBoyJims = new Reviews({
-    name: 'PoBoyJims',
+    name: 'Crawfish Spring Rolls',
     img: 'https://files.slack.com/files-pri/T0351JZQ0-FDM8A87PT/image.png',
     price: '$ 9.00',
     yelpreview: 'https://www.yelp.com/biz/po-boy-jim-washington?osq=po+boy+jims',

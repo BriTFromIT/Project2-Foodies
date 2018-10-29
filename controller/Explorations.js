@@ -1,21 +1,77 @@
 // EXPLORATIONS / RESTAURANTS VISITED PAGE
-const explore = require('../models/Restaurant')
-const review = require('../models/Reviews')
+// const explore = require('../models/Restaurant')
+const Restaurant = require('../models/Restaurant');
+const review = require('../models/Reviews');
 
-let wander = {
-    index: (req, res) => {
+let explore = {
+    index: ((req, res) => {
         res.render('explorations/');
-    },
+    }),
     new: (req, res) => {
-        res.render('explorations/:id'); {
-        res.send('Hello from new exploration! ')
-        }
+        res.render('explorations/new')
       },
     show: (req, res) => {
-
+        Restaurant.findById(req.params.id)
+        .then(restaurant => {
+            res.render('explorations/show', {restaurant: restaurant})
+        })
+        
     }
 }
 
 
 
-module.exports = wander
+module.exports = explore
+
+
+// const User = require('../models/User')
+// const Event = require('../models/Event')
+
+// const eventsController = {
+//    index: (req, res) => {
+//        Event.find({}).populate('events')
+//        .then((events) => {
+//            res.render('events/index', {
+//                events: events
+//            })
+//        })
+//    },
+
+//    new: (req, res) =>{
+//        res.render('events/new')
+
+//      },
+
+
+//    create: (req, res) => {
+//        Event.create(req.body).then((newEvent) => {
+//          res.redirect(`/events/${newEvent._id}`)
+//        })
+//      },
+
+
+//      edit: (req, res) => {
+//        Event.findById(req.params.id).then(event => {
+//          res.render('events/edit', { event: event })
+//        })
+//      },
+
+//      update: (req, res) => {
+//        Event.findByIdAndUpdate(req.params.id, req.body).then((updatedEvent) => {
+//          res.redirect(`/events/${updatedEvent._id}`)
+//        })
+//      },
+
+//      delete: (req, res) => {
+//        Event.findByIdAndRemove(req.params.id).then(() => {
+//          res.redirect('/')
+//        })
+//      }
+
+// }
+
+// module.exports = eventsController
+// Jump
+// Message Input
+
+// Message @Rashaunda Guy-Callum

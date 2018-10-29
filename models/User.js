@@ -1,3 +1,6 @@
+
+// USER PROFILE PAGE DATA
+
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
@@ -9,8 +12,7 @@ const User = new Schema ({
         password: String,
         yourlocation: String,
         img: String,
-        // slogan: String
     }]
 })
 
-module.exports = mongoose.model('User', User)
+module.exports = mongoose.model('Users', User)
