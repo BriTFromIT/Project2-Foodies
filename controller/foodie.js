@@ -33,23 +33,16 @@ const foodie = {
                 res.render('users/show', { user: user })
             })
     },
-    
- 
-    
-    
+    delete: (req, res) => {
+        User.findByIdAndRemove(req.params.id).then(() => {
+          res.redirect('/views/index')
+        })
+      },
+      update: (req, res) => {
+        res.send('Hello from chirp update')
+      }
 }
 
-// create: (req, res) => {
-//     User.create(req.body).then((newUser) => {
-//       res.redirect(`/users/${newUser._id}`)
-//     })
-//   },
 
-// update: (req, res) => {
-//     Users.findByIdAndUpdate(req.params.id, req.body)
-//     .then((updateUser) => {
-//         res.redirect(`/$updateUser._id`)
-//     })
-// }
 
 module.exports = foodie

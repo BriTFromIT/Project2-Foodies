@@ -15,9 +15,18 @@ let explore = {
         .then(restaurant => {
             res.render('explorations/show', {restaurant: restaurant})
         })
-        
+    },
+        create: (req, res) => {
+            console.log("user created")
+            console.log(req.body)
+            Restaurant.create(req.body).then((newRestaurant) => {
+                console.log("NEW RESTAURANT", newRestaurant)
+                newRestaurant.save()
+                res.redirect(`/explorations/${newRestaurant._id}`)
+            })
+        },
     }
-}
+
 
 
 
