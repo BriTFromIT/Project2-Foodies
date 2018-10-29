@@ -32,15 +32,7 @@ const foodie = {
             .then(user => {
                 res.render('users/show', { user: user })
             })
-    },
-    delete: (req, res) => {
-        User.findByIdAndRemove(req.params.id).then(() => {
-          res.redirect('/views/index')
-        })
-      },
-      update: (req, res) => {
-        res.send('Hello from chirp update')
-      }
+    }
 }
 
 

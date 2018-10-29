@@ -37,8 +37,8 @@ router.get('/explorations', explore.index) // GET user's explorations &&|| shows
 router.get('/explorations/new', explore.new)
 router.post('/explorations', explore.create) // POST - function for creating the user profile
 router.get('/explorations/:id', explore.show) // GET - shows the list of user's explorations || restaurants they've visisted
-// router.post('/explorations/:id', explore.update) // POST - update user's explorations / restaurants they visited
-// router.delete('/explorations/:id', explore.delete) // DELETE - removes selected exploration / restaurant information
+router.delete('/explorations/:id', explore.delete) // DELETE - removes selected exploration / restaurant information
+router.post('/explorations/:id', explore.update) // POST - update user's explorations / restaurants they visited
 
 // // -----_-_-____-___-_-_-----_-_____---______------_
 // // -----_-_-____-___-_-_-----_-_____---______------_

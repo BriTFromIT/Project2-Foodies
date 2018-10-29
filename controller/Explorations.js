@@ -7,14 +7,8 @@ let explore = {
     index: ((req, res) => {
         res.render('explorations');
     }),
-    new: (req, res) => {
+        new: (req, res) => {
         res.render('explorations/new')
-      },
-    show: (req, res) => {
-        Restaurant.findById(req.params.id)
-        .then(restaurant => {
-            res.render('explorations/show', {restaurant: restaurant})
-        })
     },
         create: (req, res) => {
             console.log("user created")
@@ -24,7 +18,21 @@ let explore = {
                 newRestaurant.save()
                 res.redirect(`/explorations/${newRestaurant._id}`)
             })
-        },
+    },
+        show: (req, res) => {
+        Restaurant.findById(req.params.id)
+        .then(restaurant => {
+            res.render('explorations/show', {restaurant: restaurant})
+        })
+    },
+        delete: (req, res) => {
+            Restaurant.findByIdAndRemove(req.params.id).then(() => {
+              res.redirect('/views/index')
+            })
+          },
+        update: (req, res) => {
+            res.send('Updated!')
+          },
     }
 
 
@@ -80,7 +88,3 @@ module.exports = explore
 // }
 
 // module.exports = eventsController
-// Jump
-// Message Input
-
-// Message @Rashaunda Guy-Callum
