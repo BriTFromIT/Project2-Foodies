@@ -121,14 +121,12 @@ let newRestaurant3 = new Restaurant({
 //  USERS SECTION ---------------------------------------------
 
 let newUser = new User ({
-    info: [{
         name: 'Backend Queen',
         username: 'BackEndQueen',
         password: 'QueenOfBackendFirstOfHerName3',
         yourlocation: 'Washington, DC',
         img: 'https://www.linkedin.com/in/brittfromit/'
         // slogan: 'Meet Foodies in your area and explore your favorite restaurants!',
-    }]
 })
 
 // User.create(newUser).then(users => {

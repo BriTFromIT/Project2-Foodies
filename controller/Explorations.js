@@ -5,7 +5,7 @@ const review = require('../models/Reviews');
 
 let explore = {
     index: ((req, res) => {
-        res.render('explorations/');
+        res.render('explorations');
     }),
     new: (req, res) => {
         res.render('explorations/new')
