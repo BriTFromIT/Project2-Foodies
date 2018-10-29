@@ -1,7 +1,6 @@
 const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
-const User = require('../foodie')
 
 const User = new Schema ({
     info: [{

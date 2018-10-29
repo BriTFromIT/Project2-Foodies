@@ -1,11 +1,21 @@
 // EXPLORATIONS / RESTAURANTS VISITED PAGE
+const explore = require('../models/Restaurant')
+const review = require('../models/Reviews')
 
-const explore = {
+let wander = {
     index: (req, res) => {
-        res.render('explorations/index');
+        res.render('explorations/');
+    },
+    new: (req, res) => {
+        res.render('explorations/:id'); {
+        res.send('Hello from new exploration! ')
+        }
+      },
+    show: (req, res) => {
+
     }
 }
 
 
 
-module.exports = explore
+module.exports = wander

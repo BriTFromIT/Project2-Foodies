@@ -1,15 +1,8 @@
 <h1> SHOW PAGE PROFILE  </h1>
-<p> FOODIE.JS FILE </p>
 
 
-<form>
-
-<div> username: <input type="text" name="email" value="{{User.username}}"> </div> 
-<div> password: <input type="text" name="password" value="{{User.password}}"> </div>
-<button>
-    <input type="submit" name="submit">
-
-</button>
-
-
-</form>
+<h1> hello from user show </h1>
+<div>{{user.email}}</div>
+{{#each user.eval}}
+    {{content}}
+{{/each}}
