@@ -1,38 +1,40 @@
-<h1> NEW EXPLORATION :</h1>
+<h1>Create New Your Exploration Here! </h1>
 
-<h2> click below to begin creating your new expedition</h2>
+
+
+
 
 
 <main id="h2Text">
 
-   <h3>Create Your New Event!</h3>
+   <h3> NEW EXPLORATION :</h3>
 
-   <div id="edit-form" class="donut-container-show">
+   <div id="edit-form" class="explore-container-show">
 
-       <form action="/events{{events_.id}}" method="POST">
+       <form action="/explorations/{{explorations_.id}}" method="POST">
            <div>
-               <label for="name">name: </label>
+               <label for="name"> name: </label>
                <input type="text" name="name">
            </div>
            <div>
-               <label for="date">date: </label>
-               <input type="date" name="date">
+               <label for="location"> location: </label>
+               <input type="text" name="location">
            </div>
            <div>
-               <label for="time">time: </label>
+               <label for="contact"> Contact: </label>
                <input type="text" name='time'>
            </div>
            <div>
-               <label for="location">location: </label>
-               <input type="text" name='location'>
+               <label for="hours"> hours: </label>
+               <input type="text" name='hours'>
            </div>
            <div>
-               <label for="type">type: </label>
-               <input type="text" name='type'>
+               <label for="website"> website: </label>
+               <input type="text" name='website'>
            </div>
            <div>
-               <label for="equipment">equipment: </label>
-               <input type="text" name='equipment'>
+               <label for="description"> description: </label>
+               <input type="text" name='description'>
            </div>
            <button type="submit">Create New Event</button>
        </form>

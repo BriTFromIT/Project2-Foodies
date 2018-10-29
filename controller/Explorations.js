@@ -3,6 +3,7 @@
 const Restaurant = require('../models/Restaurant');
 const review = require('../models/Reviews');
 
+
 let explore = {
     index: ((req, res) => {
         res.render('explorations');
