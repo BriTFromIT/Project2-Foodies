@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 // Reviews will be the dish
 
-const Reviews = new Schema ({
+const Reviews = new Schema({
     name: String,
     img: String,
     price: String,

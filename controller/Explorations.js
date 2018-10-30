@@ -8,33 +8,33 @@ let explore = {
     index: ((req, res) => {
         res.render('explorations');
     }),
-        new: (req, res) => {
+    new: (req, res) => {
         res.render('explorations/new')
     },
-        create: (req, res) => {
-            console.log("user created")
-            console.log(req.body)
-            Restaurant.create(req.body).then((newRestaurant) => {
-                console.log("NEW RESTAURANT", newRestaurant)
-                newRestaurant.save()
-                res.redirect(`/explorations/${newRestaurant._id}`)
-            })
-    },
-        show: (req, res) => {
-        Restaurant.findById(req.params.id)
-        .then(restaurant => {
-            res.render('explorations/show', {restaurant: restaurant})
+    create: (req, res) => {
+        console.log("user created")
+        console.log(req.body)
+        Restaurant.create(req.body).then((newRestaurant) => {
+            console.log("NEW RESTAURANT", newRestaurant)
+            newRestaurant.save()
+            res.redirect(`/explorations/${newRestaurant._id}`)
         })
     },
-        delete: (req, res) => {
-            Restaurant.findByIdAndRemove(req.params.id).then(() => {
-              res.redirect('/views/index')
+    show: (req, res) => {
+        Restaurant.findById(req.params.id)
+            .then(restaurant => {
+                res.render('explorations/show', { restaurant: restaurant })
             })
-          },
-        update: (req, res) => {
-            res.send('Updated!')
-          },
-    }
+    },
+    update: (req, res) => {
+        res.send('Updated!')
+    },
+    delete: (req, res) => { //what the route will look for
+        Restaurant.findByIdAndRemove(req.params.id).then(() => {
+            res.redirect('/evaluation/show')
+        })
+    },
+}
 
 
 

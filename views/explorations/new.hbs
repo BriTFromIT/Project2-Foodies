@@ -7,37 +7,47 @@
 
 <main id="h2Text">
 
-   <h3> NEW EXPLORATION :</h3>
+    <h3> NEW EXPLORATION :</h3>
 
-   <div id="edit-form" class="explore-container-show">
+    <div id="edit-form" class="explore-container-show">
 
-       <form action="/explorations/{{explorations_.id}}" method="POST">
-           <div>
-               <label for="name"> name: </label>
-               <input type="text" name="name">
-           </div>
-           <div>
-               <label for="location"> location: </label>
-               <input type="text" name="location">
-           </div>
-           <div>
-               <label for="contact"> Contact: </label>
-               <input type="text" name='time'>
-           </div>
-           <div>
-               <label for="hours"> hours: </label>
-               <input type="text" name='hours'>
-           </div>
-           <div>
-               <label for="website"> website: </label>
-               <input type="text" name='website'>
-           </div>
-           <div>
-               <label for="description"> description: </label>
-               <input type="text" name='description'>
-           </div>
-           <button type="submit">Create New Event</button>
-       </form>
+        <form action="/explorations/{{explorations_.id}}" method="POST">
+            <div>
+                <label for="name"> Name: </label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label for="location"> Location: </label>
+                <input type="text" name="location">
+            </div>
+            <div>
+                <label for="contact"> Contact: </label>
+                <input type="text" name='time'>
+            </div>
 
-   </div>
+            <div>
+                <label for="website"> Website: </label>
+                <input type="text" name='website'>
+            </div>
+            <div>
+                <label for="description"> Description: </label>
+                <input type="text" name="description">
+            </div>
+            <div>
+                <label for="img"> IMG </label>
+                <input type="text" name="img">
+            </div>
+            <div>
+                <label for="img"> IMG </label>
+                <input type="text" name="img">
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <button type="submit"> EXPLORED !! </button>
+        </form>
+
+    </div>
 </main>

@@ -7,5 +7,5 @@ This is my Project 2 from my Web Development Immersive bootcamp at General Assem
 
 Previously, My best friend and I started going to one black owned restaurant in DC each week. So far, we've explored 22 different restaurants and created a small facebook album for each one. I'm starting this application with a couple of DC spots, as I want to continue exploring US cities and their black owned restaurants and expand this idea for another way to meet and socialize with new people
 
-As a stretch goal: The app will also allow users to meet up with other foodies that want to try a black owned restaurant in their city.
+As a stretch goal: The app will also allow users to meet up with other foodies that want to try a black owned restaurant in their city. 
 
