@@ -11,7 +11,7 @@ const eval = require('../controller/eval') // eval.js || Reviews
 
 
 // Created route index for Application.js controller:
-router.get('/', appControl.foodies) // GET home page 
+router.get('/', appControl.index) // GET home page 
 
 // -----_-_-____-___-_-_-----_-_____---______------_
 // -----_-_-____-___-_-_-----_-_____---______------_
