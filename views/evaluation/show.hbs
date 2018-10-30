@@ -1,8 +1,38 @@
-<h1> SHOW PAGE FOR DISH REVIEWS </h1>
+<h1> SHOW PAGE FOR RESTUARANT </h1>
+<h1> ***** THIS PAGE WILL HAVE THE OPTION TO CREATE A NEW DISH REVIEW </h1>
+
+
+<h2> This page should list each review to each restaurant </thead></h2>
 
 
 
 
+
+    {{#each Reviews}}
+
+        <h3>
+            
+                            <a href="/explorations/{{this._id}}">
+                {{name}}
+            </a>
+        </h3>
+
+
+
+
+
+    {{/each}}
+    <br> 
+ 
+<form action="/events/{{Reviews._id}}?_method=DELETE" method="POST">
+
+  <button type="submit">Delete Explortion</button>
+</form>
+
+
+
+
+{{!-- 
 <form action="/evaluation/{{explorations._id}}?_method=PATCH" method="POST">
   <div>
     <label for="name"> DISH: </label>
@@ -36,4 +66,4 @@
 
 <form action="/Reviews/{{Restaurant._id}}?_method=DELETE" method="POST">
   <button type="submit">Delete Exploration </button>
-</form>
+</form> --}}

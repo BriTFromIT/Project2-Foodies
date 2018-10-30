@@ -6,7 +6,9 @@ const review = require('../models/Reviews');
 
 let explore = {
     index: ((req, res) => {
-        res.render('explorations');
+        Restaurant.find().then(restaurants => {
+            res.render('explorations/index', {restaurants: restaurants});
+        })
     }),
     new: (req, res) => {
         res.render('explorations/new')

@@ -13,41 +13,90 @@
 
         <form action="/explorations/{{explorations_.id}}" method="POST">
             <div>
-                <label for="name"> Name: </label>
-                <input type="text" name="name">
+                <label for="name"> Restaurant: </label>
+                <input type="text" name="name" value="{{Resaurant.name}}">
             </div>
             <div>
                 <label for="location"> Location: </label>
-                <input type="text" name="location">
+                <input type="text" name="location" value="{{Resaurant.location}}">
             </div>
             <div>
                 <label for="contact"> Contact: </label>
-                <input type="text" name='time'>
+                <input type="text" name='contact'value="{{Resaurant.contact}}">
             </div>
 
             <div>
                 <label for="website"> Website: </label>
-                <input type="text" name='website'>
+                <input type="text" name='website' value="{{Resaurant.website}}">
             </div>
             <div>
                 <label for="description"> Description: </label>
-                <input type="text" name="description">
+                <input type="text" name="description" value="{{Resaurant.description}}">
             </div>
             <div>
                 <label for="img"> IMG </label>
-                <input type="text" name="img">
+                <input type="text" name="img" value="{{Resaurant.img}}">
             </div>
             <div>
                 <label for="img"> IMG </label>
-                <input type="text" name="img">
+                <input type="text" name="img" value="{{Resaurant.img}}">
             </div>
 
             <br>
             <br>
             <br>
 
-            <button type="submit"> EXPLORED !! </button>
+            
         </form>
 
     </div>
 </main>
+
+{{!-- 
+<form action="/evaluation/{{evaluation._id}}?_method=PATCH" method="POST">
+  <div>
+    <label for="name"> DISH: </label>
+    <input type="text" name="name" value="{{Reviews.name}}">
+  </div>
+
+  <div>
+    <label for="img"> PUT PICTURE HERE </label>
+    <input type="img" name="img" value="{{Reviews.img}}">
+  </div>
+
+  <div>
+    <label for="price"> PRICE </label>
+    <input type="text" name="price" value="{{Reviews.price}}">
+  </div>
+  <div>
+    <label for="yelp"> YELP REVIEW:  </label>
+    <input type="text" name="yelpreview" value="{{Reviews.yelpreview}}">
+  </div>
+  <div>
+    <label for="myrating"> MY RATING:  </label>
+    <input type="text" name="myrating" value="{{Reviews.myrating}}">
+  </div>
+
+  <br>
+  <br>
+ 
+</form>
+<br> --}}
+
+
+<main>
+        <a href="/explorations"> <button> EXPLORED ! </button></a>
+        </div>
+
+        <br>
+
+
+        <br>
+        <br>
+        </main>
+ {{!-- <button type="submit"> Edit Review </button> --}}
+
+{{!-- <form action="/Reviews/{{Restaurant._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete Exploration </button>
+</form> --}}
+

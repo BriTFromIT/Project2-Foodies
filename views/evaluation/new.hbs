@@ -1,0 +1,33 @@
+<h1> CREATE YOUR REVIEW HERE </h1>
+
+
+
+<form action="/evaluation/{{evaluation._id}}?_method=PATCH" method="POST">
+  <div>
+    <label for="name"> DISH: </label>
+    <input type="text" name="name" value="{{Reviews.name}}">
+  </div>
+
+  <div>
+    <label for="img"> PUT PICTURE HERE </label>
+    <input type="text" name="img" value="{{Reviews.img}}">
+  </div>
+
+  <div>
+    <label for="price"> PRICE </label>
+    <input type="text" name="price" value="{{Reviews.price}}">
+  </div>
+  <div>
+    <label for="yelp"> YELP REVIEW:  </label>
+    <input type="text" name="yelpreview" value="{{Reviews.yelpreview}}">
+  </div>
+  <div>
+    <label for="myrating"> MY RATING:  </label>
+    <input type="text" name="myrating" value="{{Reviews.myrating}}">
+  </div>
+
+  <br>
+  <br>
+ 
+</form>
+<br>
