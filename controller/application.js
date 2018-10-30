@@ -1,5 +1,5 @@
 const appControl = {
-    foodies: (req, res) => {
+    index: (req, res) => {
         res.render('index')
     }
 }
