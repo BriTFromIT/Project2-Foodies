@@ -1,5 +1,4 @@
 // REVIEWS PAGE
-
 const Reviews = require('../models/Reviews');
 
 const eval = {
@@ -19,10 +18,18 @@ const eval = {
         })
     },
     show: (req, res) => {
-        Reviews.findById(req.params.id)
-        .then(reviews => {
-            res.render('evaluation/show' , { reviews: reviews });
+        cont 
+        Reviews.findById(req.params.reviews._Id)
+        .then(review => {
+            res.render('evaluation/show' , { review: review });
         })
+
+        // show: (req, res) =>{
+        //     const storeId = req.params.storesId
+        //     Store.findById(storeId).populate('products')
+        //     .then(store => {
+        //         res.render('stores/show', {store: store})
+        //     })
     },
     delete: (req, res) => {
         Reviews.findByIdAndRemove(req.params.id)

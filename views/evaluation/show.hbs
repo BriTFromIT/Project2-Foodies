@@ -2,30 +2,54 @@
 <h1> ***** THIS PAGE WILL HAVE THE OPTION TO CREATE/DETELE A NEW DISH REVIEW </h1>
 
 
+{{#each review}}
+<div>
+    <h2> <a href="/evaluation/{{_id}}"> {{name}}</a></h2>
+</div>
+
+
+
+<br>
+<br>
+<br>{{/each}}
+
+<div>
+    <h2> Dish Name: {{review.name}} </h2>
+
+    <p> {{review.img}} </p>
+    <p> Price: {{review.price}} </p>
+    <p> Yelp: {{reviews.yelpreview}} </p>
+    <p> My Rating {{reviews.myrating}} </p>
 
 
 
 
-    {{#each Reviews}}
-
-        <h3>
-            
-                            <a href="/explorations/{{this._id}}">
-                {{name}}
-            </a>
-        </h3>
 
 
 
 
+    <br>
 
-    {{/each}}
-    <br> 
- 
-<form action="/evaluation/{{Reviews._id}}?_method=DELETE" method="POST">
+   <button type="submit">  <form action="/evaluation/{{reviews._id}}?_method=DELETE" method="POST">
 
-  <button type="submit">Delete Review </button>
-</form>
+        Delete Review 
+    </form> </button>
+
+
+<main>
+
+    <a href="/explorations/"> <button> Your Explorations </button></a>
+    </div>
+
+    <br>
+
+
+    <br>
+    <br>
+</main>
+
+
+</div>
 
 
 

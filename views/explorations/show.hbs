@@ -1,47 +1,57 @@
 <h1> SHOW RESTAURANT PAGE PROFILE </h1>
- 
+
 
 
 Users can view the restuarant information here:
 
 <h3> Your Explorations: </h3>
 
-**********this page should show list the restaurant information ******** 
+**********this page should show list the restaurant information ********
 
 <div>
-    {{!-- <h2> 
-      <a href="/explorations/{{this._id}}"> {{Restaurant}}</a></h2> --}}
+    {{!--
+    <h2>
+        <a href="/explorations/{{this._id}}"> {{Restaurant}}</a></h2> --}}
 
 
-  <h2> Restuarant Name: {{restaurant.name}}</h2>
+    <h2> Restuarant Name: {{restaurant.name}}</h2>
 
-  <p> Location: {{restaurant.location}}</p>
-  <p> Contact: {{restaurant.contact}}</p>
-  <p> Website: {{restaurant.website}}</p>
-  <p> Description: {{restaurant.description}}</p>
-  <p> {{restaurant.img}}</p>
-  
-  </div>
+    <p> Location: {{restaurant.location}}</p>
+    <p> Contact: {{restaurant.contact}}</p>
+    <p> Website: {{restaurant.website}}</p>
+    <p> Description: {{restaurant.description}}</p>
+    <p> {{restaurant.img}}</p>
+
+</div>
 
 
-  {{!-- <div> <h2> Dish Name: {{reviews.name}}</h2>
+{{!--
+<div>
+    <h2> Dish Name: {{reviews.name}}</h2>
 
-  <p> {{reviews.img}} </p>
-  <p> Price: {{reviews.price}} </p>
-  <p> Yelp:{{reviews.yelpreview}} </p>
-  <p> My Rating{{reviews.myrating}} </p>
+    <p> {{reviews.img}} </p>
+    <p> Price: {{reviews.price}} </p>
+    <p> Yelp:{{reviews.yelpreview}} </p>
+    <p> My Rating{{reviews.myrating}} </p>
 
-  
-  </div> --}}
 
+</div> --}} 
+
+ {{#each restaurant.reviews}}
+
+    <h2> {{_id}} </h2>
+
+
+
+    {{/each}}
 
 ***** CREATE A BUTTON TO GO TO EVALUATION.NEW *********
 <main>
 
-    <a href="/evaluation/new"> <button> Post Your Review Here!  </button></a>
+    <a href="/evaluation/new"> <button> Post Your Review Here! </button></a>
     </div>
-
-    <a href="/evaluation"> <button> Your review </button></a>
+   
+    <a href="/exploration/id:/evaluation"> <button> Your review </button></a>
     </div>
 
 

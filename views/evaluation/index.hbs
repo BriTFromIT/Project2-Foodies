@@ -1,11 +1,33 @@
 <h1> REVIEWS </h1>
-<p> FOODIE.JS FILE </p>
-<div> <h2> Dish Name: {{reviews.name}}</h2>
 
-  <p> {{reviews.img}} </p>
-  <p> Price: {{reviews.price}} </p>
-  <p> Yelp:{{reviews.yelpreview}} </p>
-  <p> My Rating{{reviews.myrating}} </p>
+<br>
+<br>
+<br>
 
-  
-  </div>
+<div>
+    <h2> Dish Name: {{reviews.name}}</h2>
+
+    <p> {{reviews.img}} </p>
+    <p> Price: {{reviews.price}} </p>
+    <p> Yelp: {{reviews.yelpreview}} </p>
+    <p> My Rating {{reviews.myrating}} </p>
+
+
+
+
+
+
+
+
+    <br>
+
+    <form action="/evaluation/{{reviews._id}}?_method=DELETE" method="POST">
+
+        <button type="submit"> Delete Review </button>
+    </form>
+
+
+
+
+
+</div>

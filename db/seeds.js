@@ -52,7 +52,8 @@ let newRestaurant1 = new Restaurant({
     website: 'http://www.smithpublictrustdc.com/',
     description: 'Dining room, public house and fun progressive space, offering approachable cuisine, craft beer, spirits & wine in the heart of #Brookland, DC. Located one block from CUA/Brookland Metro with free high-speed WiFi, private bar space, a live performance stage & an outdoor patio.',
     img: 'http://brooklandbridge.com/wp-content/uploads/2017/02/FullSizeRender-71-300x202.jpg',
-    img: 'https://gaycities-featured-images-production.s3.amazonaws.com/events/originals/fb_12038682_1622885904633136_2177253583028108562_o.jpg'
+    img: 'https://gaycities-featured-images-production.s3.amazonaws.com/events/originals/fb_12038682_1622885904633136_2177253583028108562_o.jpg',
+    reviews: [smithPublicTrustDc]
 })
 
 //************************newRestaurant2*************************************************
@@ -73,7 +74,8 @@ let newRestaurant2 = new Restaurant({
     website: 'http://oohhsnaahhs.com/',
     description: 'The regions best soul food, dished out from a galley kitchen to customers who josh with chef Oji Abbott as they tear into heaped-high meals. The mac and cheese inspires devotion, fried chicken is the stuff of dreams, and candied yams conjure a homey Thanksgiving dinner.',
     img: 'http://i221.photobucket.com/albums/dd225/scaridad/IMG_0192.jpg',
-    img: 'https://www.dinersdriveinsdiveslocations.com/oohhs-aahhs-grilled-whiting.jpg'
+    img: 'https://www.dinersdriveinsdiveslocations.com/oohhs-aahhs-grilled-whiting.jpg',
+    reviews: [ ohsAndAhs ]
 })
 
 
@@ -96,7 +98,9 @@ let newRestaurant3 = new Restaurant({
     website: 'https://poboyjim.com/',
     description: 'Po Boy Jim is a family-owned restaurant that specializes Po’ Boys that are traditional and/or uniquely crafted. We aim to provide our patrons with high quality food and beverages in a casual, rustic environment, so that food, drinks, and customer service are the highlight of the experience.',
     img: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwju-fuYlaXeAhXKTd8KHVz8BssQjRx6BAgBEAU&url=https%3A%2F%2Ffaroutawardsblog.com%2F2015%2F01%2F07%2Fpo-boy-eating-contest%2F&psig=AOvVaw1eXSIjQ1_bJXYrUA_C4_oF&ust=1540679526994400',
-    img: 'https://poboyjim.com/gallery/#!jig[1]/https://scontent.cdninstagram.com/vp/d18270774769f0415ffb00753c05cf0a/5C4D1B84/t51.2885-15/sh0.08/e35/s640x640/42582798_1912861875416782_1478755084091718507_n.jpg'
+    img: 'https://poboyjim.com/gallery/#!jig[1]/https://scontent.cdninstagram.com/vp/d18270774769f0415ffb00753c05cf0a/5C4D1B84/t51.2885-15/sh0.08/e35/s640x640/42582798_1912861875416782_1478755084091718507_n.jpg',
+    reviews:[ poBoyJims]
+
 })
 
 
@@ -118,6 +122,8 @@ let newUser = new User({
 
 
 User.remove({})
+    .then(() => Restaurant.remove())
+    .then(() => Reviews.remove())
     .then(() => Restaurant.insertMany([newRestaurant1, newRestaurant2, newRestaurant3])
         .then(() => Reviews.insertMany([smithPublicTrustDc, ohsAndAhs, poBoyJims]))
         .then(() => newUser.save())

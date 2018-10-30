@@ -23,10 +23,17 @@ let explore = {
         })
     },
     show: (req, res) => {
-        Restaurant.findById(req.params.id)
+        Restaurant.findById(req.params.id).populate('reviews')
             .then(restaurant => {
                 res.render('explorations/show', { restaurant: restaurant })
             })
+
+            // show: (req, res) =>{
+            //     const storeId = req.params.storesId
+            //     Store.findById(storeId).populate('products')
+            //     .then(store => {
+            //         res.render('stores/show', {store: store})
+            //     })
     },
     update: (req, res) => {
         Restaurant.findByIdAndUpdate(req.params.id, req.body)
