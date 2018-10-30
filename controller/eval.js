@@ -1,11 +1,11 @@
 // REVIEWS PAGE
 
-const Reviews = require('../models/Reviews')
+const Reviews = require('../models/Reviews');
 
 const eval = {
     index: ((req, res) => {
-        Reviews.find().then(reviews => {
-            res.render('evaluation/new', { reviews: reviews});
+        Reviews.find({}).then(reviews => {
+            res.render('evaluation/index', { reviews: reviews});
         })
     }),
     new: (req, res) => {
@@ -21,7 +21,7 @@ const eval = {
     show: (req, res) => {
         Reviews.findById(req.params.id)
         .then(reviews => {
-            res.render('evaluation/show' , { reviews: reviews});
+            res.render('evaluation/show' , { reviews: reviews });
         })
     },
     delete: (req, res) => {

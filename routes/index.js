@@ -55,12 +55,12 @@ router.get('/evaluation', eval.index) // GET navigates to user's reviews &&|| sh
 
 
 // // Create routes for navigating Explorations / Restaurants: 
-router.get('/evaluation', eval.new) // GET - navigates to a page to create a new review page
-router.get('/evaluation/:id', eval.show) // GET - shows page to create new review page 
+router.get('/evaluation/new', eval.new) // GET - navigates to a page to create a new review page
 router.post('/evaluation/:id', eval.create) // POST -  creates a new review page
+router.get('/evaluation/:id', eval.show) // GET - shows page to create new review page 
 // router.get('/evaluations/:id/edit', eval.edit) // GET - shows the updates made to new review page
-router.delete('/evaluations/:id', eval.delete) // DELETE - removes selected exploration / restaurant information
-router.post('/evaluations/:id', eval.update) // POST - update user's explorations / restaurants they visited
+router.delete('/evaluation/:id', eval.delete) // DELETE - removes selected exploration / restaurant information
+router.post('/evaluation/:id', eval.update) // POST - update user's explorations / restaurants they visited
 
 
 // -----_-_-____-___-_-_-----_-_____---______------_
