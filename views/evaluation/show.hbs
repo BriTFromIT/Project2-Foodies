@@ -1,0 +1,39 @@
+<h1> SHOW PAGE FOR DISH REVIEWS </h1>
+
+
+
+
+<form action="/evaluation/{{explorations._id}}?_method=PATCH" method="POST">
+  <div>
+    <label for="name"> DISH: </label>
+    <input type="text" name="name" value="{{Reviews.name}}">
+  </div>
+
+  <div>
+    <label for="img"> PUT PICTURE HERE </label>
+    <input type="img" name="img" value="{{Reviews.img}}">
+  </div>
+
+  <div>
+    <label for="price"> PRICE </label>
+    <input type="text" name="price" value="{{Reviews.price}}">
+  </div>
+  <div>
+    <label for="yelp"> YELP REVIEW:  </label>
+    <input type="text" name="yelpreview" value="{{Reviews.yelpreview}}">
+  </div>
+  <div>
+    <label for="myrating"> MY RATING:  </label>
+    <input type="text" name="myrating" value="{{Reviews.myrating}}">
+  </div>
+
+  <br>
+  <br>
+
+  <button type="submit"> Edit Review </button>
+</form>
+<br>
+
+<form action="/Reviews/{{Restaurant._id}}?_method=DELETE" method="POST">
+  <button type="submit">Delete Exploration </button>
+</form>
