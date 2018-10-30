@@ -40,9 +40,10 @@ router.get('/explorations', explore.index) // GET user's explorations &&|| shows
 router.get('/explorations/new', explore.new)
 router.post('/explorations', explore.create) // POST - function for creating the user profile
 router.get('/explorations/:id', explore.show) // GET - shows the list of user's explorations || restaurants they've visisted
-router.delete('/explorations/:id', explore.delete) // DELETE - removes selected exploration / restaurant information
-router.post('/explorations/:id', explore.update) // POST - update user's explorations / restaurants they visited
+router.patch('/explorations/:id', explore.update) // PATCH - updates user info 
 
+// router.patch('/events/:id', eventsController.update)
+// router.delete('/events/:id', eventsController.delete)
 
 // // -----_-_-____-___-_-_-----_-_____---______------_
 // // -----_-_-____-___-_-_-----_-_____---______------_
@@ -50,14 +51,16 @@ router.post('/explorations/:id', explore.update) // POST - update user's explora
 
 
 // // Create route index for Evaluations / Reviews :
-// router.get('/evaluation', eval.index) // GET navigates to user's reviews &&|| shows Reviews
+router.get('/evaluation', eval.index) // GET navigates to user's reviews &&|| shows Reviews
 
 
 // // Create routes for navigating Explorations / Restaurants: 
-// router.get('/evaluation', eval.new) // GET - navigates to a page to create a new review page
-// router.get('/evaluation/:id', eval.show) // GET - shows page to create new review page 
-// router.post('/evaluation/:id', eval.create) // POST -  creates a new review page
+router.get('/evaluation', eval.new) // GET - navigates to a page to create a new review page
+router.get('/evaluation/:id', eval.show) // GET - shows page to create new review page 
+router.post('/evaluation/:id', eval.create) // POST -  creates a new review page
 // router.get('/evaluations/:id/edit', eval.edit) // GET - shows the updates made to new review page
+router.delete('/evaluations/:id', eval.delete) // DELETE - removes selected exploration / restaurant information
+router.post('/evaluations/:id', eval.update) // POST - update user's explorations / restaurants they visited
 
 
 // -----_-_-____-___-_-_-----_-_____---______------_

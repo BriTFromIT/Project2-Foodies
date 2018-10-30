@@ -25,18 +25,16 @@ let explore = {
     show: (req, res) => {
         Restaurant.findById(req.params.id)
             .then(restaurant => {
-                res.render('evaluation/show', { restaurant: restaurant })
+                res.render('explorations/show', { restaurant: restaurant })
             })
     },
-    delete: (req, res) => { //what the route will look for
-        Restaurant.findByIdAndRemove(req.params.id).then(() => {
-            res.redirect('/evaluation/show')
-        })
-    },
     update: (req, res) => {
-        res.send('Exploration Deleted')
-    },
-    
+        Restaurant.findByIdAndUpdate(req.params.id, req.body)
+        .then((updatedExploration) => {
+            res.redirect(`/explorations/${updatedExploration._id}`)
+        })
+        .then (res.send('New Exploration Added !'))
+    } 
 }
 
 
