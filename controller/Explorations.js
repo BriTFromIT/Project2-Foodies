@@ -63,7 +63,7 @@ let explore = {
         .then (res.send('New Exploration Added !'))
     },
     delete: (req, res) => {
-        Reviews.findByIdAndRemove(req.params.id).then(() => {
+        Restaurant.findByIdAndDelete(req.params.id).then(() => {
                 res.redirect('/explorations/')
             })
         }
