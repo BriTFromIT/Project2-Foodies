@@ -9,3 +9,11 @@ Previously, My best friend and I started going to one black owned restaurant in 
 
 As a stretch goal: The app will also allow users to meet up with other foodies that want to try a black owned restaurant in their city. 
 
+
+Trello board: https://trello.com/b/zChUtzJf/project-2-blackowneddatabase
+
+
+ERD / Wireframe:
+
+
+
