@@ -27,14 +27,6 @@ let explore = {
             res.redirect('/explorations/show')
         })
     },
-
-
-
-
-    // edit: (req, res) => { //what the route will look for
-    //     User.findById(req.body).then((User) => {
-    //         res.redirect('/users/show')
-    //     })
     show: (req, res) => {
         const restaurantId = req.params.restaurantId
         console.log(restaurantId)
@@ -47,24 +39,17 @@ let explore = {
             .then(restaurant => {
                 res.render('explorations/show', { restaurant: restaurant })
             })
-
-            // show: (req, res) =>{
-            //     const storeId = req.params.storesId
-            //     Store.findById(storeId).populate('products')
-            //     .then(store => {
-            //         res.render('stores/show', {store: store})
-            //     })
     },
-    update: (req, res) => {
-        Restaurant.findByIdAndUpdate(req.params.id, req.body)
-        .then((updatedExploration) => {
-            res.redirect(`/explorations/${updatedExploration._id}`)
-        })
-        .then (res.send('New Exploration Added !'))
-    },
+    // update: (req, res) => {
+    //     Restaurant.findByIdAndUpdate(req.params.id, req.body)
+    //     .then((updatedExploration) => {
+    //         res.redirect(`/explorations/${updatedExploration._id}`)
+    //     })
+    //     .then (res.send('New Exploration Added !'))
+    // },
     delete: (req, res) => {
-        Restaurant.findByIdAndDelete(req.params.id).then(() => {
-                res.redirect('/explorations/')
+        Restaurant.findByIdAndRemove(req.params.id).then(() => {
+                res.redirect('/explorations')
             })
         }
     }
@@ -75,51 +60,3 @@ let explore = {
 
 module.exports = explore
 
-
-// const User = require('../models/User')
-// const Event = require('../models/Event')
-
-// const eventsController = {
-//    index: (req, res) => {
-//        Event.find({}).populate('events')
-//        .then((events) => {
-//            res.render('events/index', {
-//                events: events
-//            })
-//        })
-//    },
-
-//    new: (req, res) =>{
-//        res.render('events/new')
-
-//      },
-
-
-//    create: (req, res) => {
-//        Event.create(req.body).then((newEvent) => {
-//          res.redirect(`/events/${newEvent._id}`)
-//        })
-//      },
-
-
-//      edit: (req, res) => {
-//        Event.findById(req.params.id).then(event => {
-//          res.render('events/edit', { event: event })
-//        })
-//      },
-
-//      update: (req, res) => {
-//        Event.findByIdAndUpdate(req.params.id, req.body).then((updatedEvent) => {
-//          res.redirect(`/events/${updatedEvent._id}`)
-//        })
-//      },
-
-//      delete: (req, res) => {
-//        Event.findByIdAndRemove(req.params.id).then(() => {
-//          res.redirect('/')
-//        })
-//      }
-
-// }
-
-// module.exports = eventsController

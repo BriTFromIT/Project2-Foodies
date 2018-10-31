@@ -28,6 +28,7 @@ router.patch('/users/:usersId', foodie.update) // PATCH - updates user info
 router.get('/users/:id', foodie.show) // GET - shows new user profile// router.post('/users/:id/edit', foodie.edit) // GET -  Rendering the form to update user profile
 // router.delete('/users/:id', explore.delete) // DELETE - removes selected exploration / restaurant information
 
+// Create for CRUD is in the users - 
 
 // -----_-_-____-___-_-_-----_-_____---______------_
 // -----_-_-____-___-_-_-----_-_____---______------_
@@ -44,8 +45,10 @@ router.post('/explorations', explore.edit) // POST will show the create page for
 router.get('/explorations/new', explore.new)
 router.post('/explorations', explore.create) // POST - function for creating the user profile
 router.get('/explorations/:id', explore.show) // GET - shows the list of user's explorations || restaurants they've visisted
-router.patch('/explorations/:id', explore.update) // PATCH - updates user info 
-router.delete('/explorations/:id', explore.delete)
+// router.patch('/explorations/:id', explore.update) // PATCH - updates user info 
+router.delete('/explorations/:id', explore.delete) // DELETE - delete the exploration/restaurant
+
+//UPDATE & DELETE for CRUD  in explorations
 
 
 // // -----_-_-____-___-_-_-----_-_____---______------_
@@ -64,6 +67,8 @@ router.get('/evaluation/:id', eval.show) // GET - shows page to create new revie
 // router.get('/evaluations/:id/edit', eval.edit) // GET - shows the updates made to new review page
 // router.delete('/evaluation/:id', eval.delete) // DELETE - removes selected exploration / restaurant information
 // router.post('/evaluation/:id', eval.update) // POST - update user's explorations / restaurants they visited
+
+//READ - for CRUD in evaluations
 
 
 // -----_-_-____-___-_-_-----_-_____---______------_
