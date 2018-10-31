@@ -16,4 +16,9 @@ Trello board: https://trello.com/b/zChUtzJf/project-2-blackowneddatabase
 ERD / Wireframe:
 
 
+found in images folder
+
+
+
+
 
