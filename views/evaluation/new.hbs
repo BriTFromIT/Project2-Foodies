@@ -1,15 +1,21 @@
 <h1> CREATE YOUR REVIEW HERE </h1>
 
-
-
-<form action="/evaluation/{{evaluation._id}}?_method=PATCH" method="POST">
-  <div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">
+            <div>
+                <h2> <a href="/explorations/{{_id}}"> {{name}}</a></h2>
+            </div>
+           
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted"> Dish <input type="text" name="name" value="{{Reviews.name}}"> </h6>
+        <p class="card-text">   <div>
     <label for="name"> DISH: </label>
     <input type="text" name="name" value="{{Reviews.name}}">
   </div>
 
   <div>
-    <label for="img"> PUT PICTURE HERE </label>
+    <label for="img"> PHOTO: </label>
     <input type="text" name="img" value="{{Reviews.img}}">
   </div>
 
@@ -18,16 +24,53 @@
     <input type="text" name="price" value="{{Reviews.price}}">
   </div>
   <div>
-    <label for="yelp"> YELP REVIEW:  </label>
+    <label for="yelp"> (optional) YELP REVIEW:  </label>
     <input type="text" name="yelpreview" value="{{Reviews.yelpreview}}">
   </div>
   <div>
     <label for="myrating"> MY RATING:  </label>
     <input type="text" name="myrating" value="{{Reviews.myrating}}">
-  </div>
+  </div></p>
+        <a href="#" class="card-link"> <main>
+        
+        <a href="/explorations"> <button> Review Created ! </button></a>
+        </div>
 
-  <br>
-  <br>
- 
-</form>
+        <br>
+
+
+        <br>
+        <br>
+        </main></a>
+       
+    </div>
+</div>
+
+
+
 <br>
+
+{{!-- <main>
+        
+        <a href="/explorations"> <button> Review Created ! </button></a>
+        </div>
+
+        <br>
+
+
+        <br>
+        <br>
+        </main> --}}
+
+
+<main>
+        <h3> Your Explorations: </h3>
+        <a href="/explorations"> <button> Explorations </button></a>
+        </div>
+
+        <br>
+
+
+        <br>
+        <br>
+        </main>

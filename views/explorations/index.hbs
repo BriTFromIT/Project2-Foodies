@@ -3,22 +3,28 @@
 
 <h3> Your Explorations: </h3>
 
-**********this page should show list all of the restaraunts******** 
-{{#each restaurants}}
+**********this page should show list all of the restaraunts******** {{#each restaurants}}
 <div>
     <h2> <a href="/explorations/{{_id}}"> {{name}}</a></h2>
 </div>
-{{/each}} {{!--
-<h3>
+{{/each}} 
 
-    <a href="/explorations/{{this._id}}">
-        {{name}}
-    </a>
-</h3> --}} {{!-- #loop through each RESTAURANTS --}} {{!-- Code goes here --}} {{!-- ((/loop)) --}}
-
-
-
-
+{{#each restaurants}}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">
+            <div>
+                <h2> <a href="/explorations/{{_id}}"> {{name}}</a></h2>
+            </div>
+           
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
+ {{/each}}
 
 
 
