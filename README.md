@@ -19,6 +19,12 @@ ERD / Wireframe:
 found in images folder
 
 
+GitHub:
 
+https://github.com/BriTFromIT/Project2-Foodies
+
+Link to site:
+
+https://pure-falls-14096.herokuapp.com/
 
 
