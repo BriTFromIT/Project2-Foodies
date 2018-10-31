@@ -1,11 +1,15 @@
 // REVIEWS PAGE
 const Reviews = require('../models/Reviews');
+const Restaurant = require('../models/Restaurant')
 
 const eval = {
     index: ((req, res) => {
-        Reviews.find({}).then(reviews => {
-            res.render('evaluation/index', { reviews: reviews});
+        const restId = req.params.id
+        Restaurant.findById(restId).populate('reviews').then(restaurant=>{
+            res.render('evaluation/index', {restaurant: restaurant})
         })
+        
+        
     }),
     new: (req, res) => {
         res.render('evaluation/new')
@@ -31,12 +35,12 @@ const eval = {
         //         res.render('stores/show', {store: store})
         //     })
     },
-    delete: (req, res) => {
-        Reviews.findByIdAndRemove(req.params.id)
-        .then (() => {
-            res.redirect('/evaluation/show')
-        })
-    },
+    // delete: (req, res) => {
+    //     Reviews.findByIdAndRemove(req.params.id)
+    //     .then (() => {
+    //         res.redirect('/evaluation/show')
+    //     })
+    // },
     update: (req, res) => {
         res.send('Review Deleted! ')
     }

@@ -25,21 +25,10 @@ Users can view the restuarant information here:
 </div>
 
 
-{{!--
-<div>
-    <h2> Dish Name: {{reviews.name}}</h2>
 
-    <p> {{reviews.img}} </p>
-    <p> Price: {{reviews.price}} </p>
-    <p> Yelp:{{reviews.yelpreview}} </p>
-    <p> My Rating{{reviews.myrating}} </p>
-
-
-</div> --}} 
-
- {{#each restaurant.reviews}}
-
-    <h2> {{_id}} </h2>
+{{log restaurant}}
+ {{#each restaurant}}
+    {{log restaurant.reviews}}
 
 
 
@@ -51,13 +40,17 @@ Users can view the restuarant information here:
     <a href="/evaluation/new"> <button> Post Your Review Here! </button></a>
     </div>
    
-    <a href="/exploration/id:/evaluation"> <button> Your review </button></a>
+    <a href="/explorations/{{restaurant._id}}/evaluation"> <button> Your review </button></a>
     </div>
-
-
-    <br>
+ <br>
 
 
     <br>
     <br>
 </main>
+
+<form action='/explorations/{{restaurant._id}}?_method=DELETE' method="POST">
+<button type="submit">Delete Restaurant</button>
+</form>
+
+   

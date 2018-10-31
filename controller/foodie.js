@@ -19,10 +19,24 @@ const foodie = { // Setting the variabe used to connect to routers
         })
     },
     edit: (req, res) => { //what the route will look for
-        User.findById(req.body).then((User) => {
-            res.redirect('/users/show')
+        User.findById(req.params.usersId).then((banana) => {
+            res.redirect('users/edit', {
+                banana: banana
+            })
+        })
+
+        // edit: (req, res) => {
+        //     Movie.findById(req.params.movieId).then(movie => {
+        //         res.render(‘movies/edit’, {movie: movie})
+        //     })
+        // },
+    },
+    update: (req, res) => {
+        User.findByIdAndUpdate(req.params.usersId, req.body).then((updatedUser) => {
+            res.redirect(`/users/${updatedUser._id}`)
         })
     },
+
     show: (req, res) => { //what the route will look for
         User.findById(req.params.id)
             .then(user => {

@@ -1,0 +1,44 @@
+<h1> ******** NEW USER SETUP PAGE *********** </h1>
+
+
+
+<p> you have navigated to the new user setup page </p>
+
+
+
+<main id="h2Text">
+
+   <h3> Create Your Foodies Profile: </h3>
+
+   <div id="edit-form" class="container-show">
+
+       <form action="/users/{{_id}}?_method=PATCH" method="POST">
+            <div>
+               <label for="name"> Name: </label>
+               <input type="text" name="name">
+           </div>
+           <br>  
+           <div>
+               <label for="username"> Username: </label>
+               <input type="text" name="username">
+           </div>
+           <br>
+           <div>
+               <label for="password"> Password : </label>
+               <input type="password" name="password">
+           </div>
+            <div>
+               <label for="yourlocation"> Your location: </label>
+               <input type="text" name="yourlocation">
+           </div>
+
+           <br>
+           <br>
+           <br>
+
+              <form action="users/{{foodie._id}}" method="POST">
+        <button type="submit"> Create MyFoodies Profile </button>
+    </form>
+
+   </div>
+</main>

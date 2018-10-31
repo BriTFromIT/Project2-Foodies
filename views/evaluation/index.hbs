@@ -3,31 +3,26 @@
 <br>
 <br>
 <br>
-
+{{#each restaurant.reviews}}
 <div>
-    <h2> Dish Name: {{reviews.name}}</h2>
+    <h2> Dish Name: {{name}}</h2>
 
-    <p> {{reviews.img}} </p>
-    <p> Price: {{reviews.price}} </p>
-    <p> Yelp: {{reviews.yelpreview}} </p>
-    <p> My Rating {{reviews.myrating}} </p>
-
-
-
-
-
-
-
-
+   
+    <p> Price: {{price}} </p>
+    <p> Yelp: {{yelpreview}} </p>
+    <p> My Rating {{myrating}} </p>
+    <p> {{img}} </p>
     <br>
-
-    <form action="/evaluation/{{reviews._id}}?_method=DELETE" method="POST">
-
-        <button type="submit"> Delete Review </button>
-    </form>
-
-
-
-
-
 </div>
+{{/each}}
+<main>
+        <h3> Your Explorations: </h3>
+        <a href="/explorations"> <button> Explorations </button></a>
+        </div>
+
+        <br>
+
+
+        <br>
+        <br>
+        </main>
